@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Selamat Datang — DyvillexzDev</title>
+  <style>
+    :root{
+      --bg1:#0f172a; /* dark navy */
+      --bg2:#0ea5a4; /* teal */
+      --accent:#06b6d4;
+      --glass: rgba(255,255,255,0.06);
+      --card: rgba(255,255,255,0.03);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system,Segoe UI, Roboto, 'Helvetica Neue', Arial}
+    body{
+      background: linear-gradient(135deg,var(--bg1) 0%, #071028 50%, #03121a 100%);
+      color:#e6f6f7;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;align-items:center;justify-content:center;padding:32px;
+    }
+    .container{width:100%;max-width:980px;margin:0 auto}.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:16px;padding:36px;border:1px solid rgba(255,255,255,0.04);backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center
+}
+@media (max-width:880px){.card{grid-template-columns:1fr; padding:28px}}
+
+.brand{display:flex;gap:16px;align-items:center}
+.logo{width:76px;height:76px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;background:linear-gradient(135deg,var(--bg2),var(--accent));box-shadow:0 6px 20px rgba(14,165,164,0.16)}
+h1{font-size:28px;margin:0 0 6px}
+p.lead{margin:0;color:rgba(230,246,247,0.82)}
+
+.cta{margin-top:20px;display:flex;gap:12px}
+.btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+.btn-primary{background:linear-gradient(90deg,var(--bg2),var(--accent));color:#022;box-shadow:0 8px 18px rgba(6,182,212,0.12)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+
+.features{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+.feature{background:var(--card);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+
+.side{
+  padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)
+}
+.side h3{margin:0 0 10px}
+.socials{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:8px 10px;border-radius:999px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);font-weight:600}
+
+footer{margin-top:16px;text-align:center;color:rgba(230,246,247,0.6);font-size:13px}
+
+/* small animation */
+.logo{transform:translateY(-2px);animation:float 6s ease-in-out infinite}
+@keyframes float{0%{transform:translateY(-2px)}50%{transform:translateY(6px)}100%{transform:translateY(-2px)}}
+
+.pulse{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div>
+        <div class="brand">
+          <div class="logo">D</div>
+          <div>
+            <h1>Selamat Datang di <span style="color:var(--bg2)">DyvillexzDev</span></h1>
+            <p class="lead">Website resmi sederhana untuk menampilkan project, tools, dan karya dari DyvillexzDev. Selamat datang — selami karya dan eksplorasi teknologi bersama kami.</p>
+          </div>
+        </div><div class="cta">
+      <button class="btn btn-primary" onclick="openLink('https://github.com/')">Lihat Project</button>
+      <button class="btn btn-outline" onclick="openLink('#contact')">Kontak</button>
+    </div>
+
+    <div class="features">
+      <div class="feature"><strong>.about</strong> — Tentang DyvillexzDev, visi, dan proyek yang sedang berjalan.</div>
+      <div class="feature"><strong>.projects</strong> — Koleksi project, demo, dan source code.</div>
+      <div class="feature"><strong>.contact</strong> — Cara menghubungi, link GitHub, dan sosial media.</div>
+    </div>
+
+    <footer>© <span id="year"></span> DyvillexzDev — dibuat dengan ❤</footer>
+  </div>
+
+  <aside class="side">
+    <h3>Akses Cepat</h3>
+    <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+      <div class="chip">Home</div>
+      <div class="chip">Projects</div>
+      <div class="chip">Blog</div>
+      <div class="chip">Tools</div>
+    </div>
+
+    <h3 id="contact">Kontak</h3>
+    <p style="margin:6px 0 12px">GitHub: <a href="https://github.com/DyvillexzDev" onclick="event.stopPropagation()">github.com/DyvillexzDev</a></p>
+    <div class="socials">
+      <a class="chip" href="#" onclick="openLink('https://github.com/DyvillexzDev')">GitHub</a>
+      <a class="chip" href="#" onclick="openLink('https://t.me/')">Telegram</a>
+      <a class="chip" href="#" onclick="openLink('https://instagram.com/')">Instagram</a>
+    </div>
+
+    <p style="margin-top:14px;font-size:13px;color:rgba(230,246,247,0.65)">Butuh bantuan untuk deploy atau kustomisasi? Hubungi melalui GitHub.</p>
+  </aside>
+</div>
+
+  </div>  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function openLink(url){
+      try{window.open(url, '_blank')}catch(e){location.href=url}
+    }
+  </script></body>
+</html>
